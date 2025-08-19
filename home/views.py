@@ -1,5 +1,9 @@
+from django.conf import settings
 from django.shortcuts import render
-def about_view(request):
-    return render(request,'about.html')
+def home_view(request):
+    name=getattr(settings,"RESTAURANT_NAME","Spice Graden")
+
+    return render(request,'home.html',{restauant_name":name})
+    
 
 # Create your views here.
